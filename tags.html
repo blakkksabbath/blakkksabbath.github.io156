@@ -1,0 +1,27 @@
+---
+layout: singlePage
+title: Tags
+---
+
+<div class="tags-expo">
+  <div class="tags-expo-list">
+    {% for tag in site.tags %}
+    <a href="#{{ tag[0] | slugify }}" class="post-tag" style="background-color:#f4f6f6; color:#e74c3c;">{{ tag[0] }}</a> / 
+    {% endfor %}
+  </div>
+  <hr/>
+  <div class="tags-expo-section">
+    {% for tag in site.tags %}
+    <h3 id="{{ tag[0] | slugify }}">{{ tag | first }}</h3>
+    <ul class="tags-expo-posts">
+      {% for post in tag[1] %}
+        <a class="post-title" href="{{ site.baseurl }}{{ post.url }}" style="font-size:17px;">
+      <li>
+        {{ post.title }}
+      </li>
+      </a>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </div>
+</div>
