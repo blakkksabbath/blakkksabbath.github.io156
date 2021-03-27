@@ -2,10 +2,10 @@
 layout: default
 ---
 
-Hello and welcome to this blog. Edit the `index.md` file to change this content. All pages on the blog, including this one, use [Markdown](https://guides.github.com/features/mastering-markdown/). You can include images:
+I’m a **CS student** currently in my last year of study at **IIIT Jabalpur, India**. Currently I’m interning as a **Data Scientist at NeenOpal Inc.**, where I am working as a part of the forecasting team to make predictions for one of the largest tile manufacturing organization in Sri Lanka. 
 
-![Image of fast.ai logo](images/logo.png)
+**When I’m not working at the screen**, I’m either banging my head to heavy metal, chilling out with hiphop/R&B songs, or write about my opinions over various music albums and bands on my second blog [here](https://jithendrabsy.github.io/thoughts/).
 
-## This is a title
+Blog / Twitter / GitHub / LinkedIn / CV
 
-And you can include links, like this [link to fast.ai](https://www.fast.ai). Posts will appear after this file. 
+
