@@ -3,11 +3,37 @@ layout: page
 title: Blog
 ---
 
-{% for post in site.posts %}
-<article>
-        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">
-                {{ post.date | date_to_string }}
-        </time>
-        <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>      
-</article>
-{% endfor %}
+<div class="posts">
+  <table style="border-collapse: collapse; border: none; background: none;">
+  {% for post in paginator.posts %}
+    <tr style="border: none; background: none; margin: 0; padding: 0;">
+        <td style="border: none; background: none; margin: 0; padding-top: 0; padding-bottom: 0; white-space: nowrap; vertical-align: top;">
+            <h4 class="post-title">{{ post.date | date: "%b %Y"}}</h4>
+        </td>
+        <td style="border: none; background: none; margin: 0; padding-top: 0; padding-bottom: 0; vertical-align: top;">
+            <h4 class="post-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                [<a onclick="toggle('{{ post.url }}-preview')" style="color: #268bd2;">preview</a>]
+            </h4>
+                <div id="{{ post.url }}-preview" style="display:none">
+                    <small><i>
+                    {{ post.content | markdownify | strip_html | truncatewords: 50 }}
+                    <a href="{{ site.baseurl }}{{ post.url }}">continue reading</a>
+                    </i></small><br><br>
+                </div>
+        </td> 
+  {% endfor %}
+  </tr>
+  </table>
+</div>
+
+<script> 
+function toggle(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
